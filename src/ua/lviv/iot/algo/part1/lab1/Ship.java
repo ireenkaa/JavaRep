@@ -36,21 +36,10 @@ public class Ship {
     public boolean load(double weight) {
         if (currentLoad + weight <= maxCapacity){
             currentLoad += weight;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
     public boolean unload(double weight) {
         if (currentLoad - weight > 0) {
             currentLoad -= weight;
-            return true;
-        }
-        else {
-            return false;
-        }
     }
 
     private static Ship instance = new Ship();
@@ -67,8 +56,8 @@ public class Ship {
         ships[2] = Ship.getInstance();
         ships[3] = Ship.getInstance();
 
-        for (int i=0; i < ships.length; i++) {
-            System.out.println(ships[i].toString());
+        for (Ship element: ships) {
+            System.out.println(element);
         }
     }
 }
